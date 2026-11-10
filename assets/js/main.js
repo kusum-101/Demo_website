@@ -202,9 +202,9 @@
             var c = current();
             goTo(c >= pages() - 1 ? 0 : c + 1);
         }
-        function userPause() {   // user ne chhua → 8 sec ke liye autoplay ruk jaye
+        function userPause() {   // user ne chhua → 5 sec ke liye autoplay ruk jaye
             paused = true; clearTimeout(resumeT);
-            resumeT = setTimeout(function () { paused = false; }, 8000);
+            resumeT = setTimeout(function () { paused = false; }, 5000);
         }
         track.addEventListener('touchstart', userPause, { passive: true });
         track.addEventListener('wheel', function (e) { if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) userPause(); }, { passive: true });
@@ -213,7 +213,7 @@
             slider.addEventListener('mouseleave', function () { paused = false; });
         }
         if (!noMotion && 'IntersectionObserver' in window) {
-            new IntersectionObserver(function (en) { inView = en[0].isIntersecting; }, { threshold: 0.4 }).observe(slider);
+            new IntersectionObserver(function (en) { inView = en[0].isIntersecting; }, { threshold: 0.25 }).observe(slider);
             timer = setInterval(tick, 4500);
         }
 
