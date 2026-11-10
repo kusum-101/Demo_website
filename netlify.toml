@@ -1,0 +1,24 @@
+# Netlify PHP nahi chalata — build ke time PHP pages HTML mein badal jaate hain.
+[build]
+  command = "php build.php"
+  publish = "dist"
+
+[build.environment]
+  PHP_VERSION = "8.3"
+
+# Purane .php links bhi kaam karein (jaise koi about.php share kare)
+[[redirects]]
+  from = "/index.php"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/:page.php"
+  to = "/:page.html"
+  status = 301
+
+# Images/CSS/JS 1 din cache — file badalne par ?v= wala URL apne aap badal jaata hai
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
