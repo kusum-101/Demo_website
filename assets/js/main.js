@@ -249,6 +249,15 @@
         toastTimer = setTimeout(function () { toast.classList.remove('show'); }, 4200);
     }
 
+    /* ---------- Demo links (config.php → DEMO_MODE) ---------- */
+    document.addEventListener('click', function (e) {
+        var a = e.target.closest ? e.target.closest('a[href="#demo"]') : null;
+        if (!a) return;
+        e.preventDefault();
+        var name = a.getAttribute('aria-label') || a.textContent.trim() || 'This link';
+        showToast('Demo — ' + name + ' link coming soon');
+    });
+
     /* ---------- Reviews slider (mobile) ---------- */
     var track = document.getElementById('reviewsTrack');
     var dotsWrap = document.getElementById('reviewsDots');

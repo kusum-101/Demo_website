@@ -14,8 +14,8 @@
                 <a href="<?php echo FB_URL; ?>" target="_blank" rel="noopener" class="fb" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="<?php echo INSTA_URL; ?>" target="_blank" rel="noopener" class="ig" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                 <a href="<?php echo YOUTUBE_URL; ?>" target="_blank" rel="noopener" class="yt" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                <a href="<?php echo wa_link('Hi! I have an enquiry.'); ?>" target="_blank" rel="noopener" class="wa" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="mailto:<?php echo SITE_EMAIL; ?>" class="em" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+                <a href="<?php echo social_href(wa_link('Hi! I have an enquiry.')); ?>" target="_blank" rel="noopener" class="wa" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="<?php echo social_href('mailto:' . SITE_EMAIL); ?>" class="em" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
             </div>
         </div>
 
